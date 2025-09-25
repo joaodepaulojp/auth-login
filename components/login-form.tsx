@@ -4,12 +4,18 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
+import { EyeIcon } from "lucide-react";
 
 export default function LoginForm() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted");
   };
+
+  function togglePassword() {
+    const input = document.getElementById("password") as HTMLInputElement;
+    input.type = input.type === "password" ? "text" : "password";
+  }
   return (
     <div className="items-center shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
       <h2 className="text-[20px] ">Bem-vindo de volta</h2>
@@ -37,6 +43,14 @@ export default function LoginForm() {
             type="password"
             className="w-full h-[49px]"
           />
+          <button
+            type="button"
+            onClick={togglePassword}
+            className="flex gap-2 items-center cursor-pointer "
+          >
+            <EyeIcon size={20} />
+            Mostrar senha
+          </button>
         </LabelInputContainer>
 
         <p className="text-secondary text-sm text-right">Esqueceu sua senha?</p>
