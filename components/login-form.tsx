@@ -11,7 +11,7 @@ export default function LoginForm() {
     console.log("Form submitted");
   };
   return (
-    <div className="items-center shadow-input mx-80 w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
+    <div className="items-center shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
       <h2 className="text-[20px] ">Bem-vindo de volta</h2>
       <p className=" max-w-sm text-[32px] font-bold">Faça login na sua conta</p>
 
@@ -24,7 +24,7 @@ export default function LoginForm() {
             id="email"
             placeholder="seuemail@exemplo.com"
             type="email"
-            className="w-[400px] h-[49px]"
+            className="w-full h-[49px]"
           />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
@@ -35,14 +35,14 @@ export default function LoginForm() {
             id="password"
             placeholder="••••••••"
             type="password"
-            className="w-[400px] h-[49px]"
+            className="w-full h-[49px]"
           />
         </LabelInputContainer>
 
         <p className="text-secondary text-sm text-right">Esqueceu sua senha?</p>
 
         <button
-          className="mt-6 group/btn relative block h-[52px] w-[400px] rounded-md bg-gradient-to-br font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] bg-secondary dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+          className="mt-6 group/btn relative block h-[52px] w-full rounded-md bg-gradient-to-br font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] bg-secondary dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
           type="submit"
         >
           Entrar na conta &rarr;
@@ -53,7 +53,7 @@ export default function LoginForm() {
 
         <div className="flex flex-col space-y-4">
           <button
-            className="group/btn shadow-input relative flex h-[52px] w-[400px] items-center justify-start space-x-2 rounded-md bg-accent px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
+            className="group/btn shadow-input relative flex h-[52px] w-full items-center justify-start space-x-2 rounded-md bg-accent px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
             type="submit"
           >
             <IconBrandGithub className="h-4 w-4 text-white" />
@@ -61,7 +61,7 @@ export default function LoginForm() {
             <BottomGradient />
           </button>
           <button
-            className="group/btn shadow-input relative flex h-[52px] w-[400px] items-center justify-start space-x-2 rounded-md bg-accent px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
+            className="group/btn shadow-input relative flex h-[52px] w-full items-center justify-start space-x-2 rounded-md bg-accent px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
             type="submit"
           >
             <IconBrandGoogle className="h-4 w-4 text-white" />
