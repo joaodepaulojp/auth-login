@@ -1,7 +1,14 @@
+import { auth } from "@/auth";
 import RegisterForm from "@/components/register-form";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
-const Register = () => {
+const Register = async () => {
+  const session = await auth();
+  if (session) {
+    return redirect("/");
+  }
+
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center h-screen">
       <div className="hidden lg:flex items-center justify-center bg-secondary-foreground h-screen w-1/2">
