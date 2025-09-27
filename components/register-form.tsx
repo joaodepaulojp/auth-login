@@ -5,13 +5,10 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
 import { EyeIcon } from "lucide-react";
+import Form from "next/form";
+import registerAction from "@/app/[auth]/register/registerAction";
 
 export default function RegisterForm() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted");
-  };
-
   function togglePassword() {
     const input = document.getElementById("password") as HTMLInputElement;
     input.type = input.type === "password" ? "text" : "password";
@@ -21,13 +18,14 @@ export default function RegisterForm() {
       <h2 className="text-[20px] ">Olá, seja bem-vindo</h2>
       <p className=" max-w-sm text-[32px] font-bold">Crie sua conta aqui</p>
 
-      <form className="my-8" onSubmit={handleSubmit}>
+      <Form action={registerAction}>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="name" className="text-lg">
             Nome
           </Label>
           <Input
             id="name"
+            name="name"
             placeholder="João da Silva"
             type="name"
             className="w-full h-[49px]"
@@ -39,6 +37,7 @@ export default function RegisterForm() {
           </Label>
           <Input
             id="email"
+            name="email"
             placeholder="seuemail@exemplo.com"
             type="email"
             className="w-full h-[49px]"
@@ -50,6 +49,7 @@ export default function RegisterForm() {
           </Label>
           <Input
             id="password"
+            name="password"
             placeholder="••••••••"
             type="password"
             className="w-full h-[49px]"
@@ -67,7 +67,7 @@ export default function RegisterForm() {
         <p className="text-secondary text-sm text-right">Esqueceu sua senha?</p>
 
         <button
-          className="mt-6 group/btn relative block h-[52px] w-full rounded-md bg-gradient-to-br font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] bg-secondary dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+          className="mt-6 group/btn relative block h-[52px] w-full rounded-md bg-gradient-to-br font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] cursor-pointer bg-secondary dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
           type="submit"
         >
           Criar conta &rarr;
@@ -94,7 +94,7 @@ export default function RegisterForm() {
             <BottomGradient />
           </button>
         </div>
-      </form>
+      </Form>
     </div>
   );
 }
