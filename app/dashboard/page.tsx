@@ -1,16 +1,7 @@
-import Form from "next/form";
-import logoutAction from "../(auth)/(logout)/logoutAction";
-import { Button } from "@/components/ui/button";
+import { NavbarDashboard } from "@/components/navbar-dashboard";
 
 const Dashboard = () => {
-  return (
-    <div>
-      Dashboard
-      <Form action={logoutAction}>
-        <Button>Logout</Button>
-      </Form>
-    </div>
-  );
+  return <NavbarDashboard />;
 };
 
 export default Dashboard;
