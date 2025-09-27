@@ -1,5 +1,5 @@
 "use client";
-import React, { useActionState } from "react";
+import React, { useActionState, useEffect } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -8,9 +8,17 @@ import { EyeIcon, Terminal } from "lucide-react";
 import Form from "next/form";
 import loginAction from "@/app/(auth)/login/loginAction";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
+import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
+  const router = useRouter();
   const [state, formAction, isPending] = useActionState(loginAction, null);
+
+  useEffect(() => {
+    if (state?.success) {
+      router.push("/dashboard");
+    }
+  });
 
   function togglePassword() {
     const input = document.getElementById("password") as HTMLInputElement;
