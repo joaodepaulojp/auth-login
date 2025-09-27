@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react";
 import { CheckCircle2Icon, EyeIcon, Terminal } from "lucide-react";
 import Form from "next/form";
-import registerAction from "@/app/[auth]/register/registerAction";
+import registerAction from "@/app/(auth)/register/registerAction";
 import { useActionState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 
