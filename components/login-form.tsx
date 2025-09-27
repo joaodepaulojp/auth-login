@@ -86,6 +86,14 @@ export default function LoginForm() {
             Entrar na conta &rarr;
             <BottomGradient />
           </button>
+          <div className="justify-center flex mt-2">
+            <p className="text-sm text-gray-400">
+              Não possui uma conta?{" "}
+              <a href="/register" className="font-semibold text-gray-600">
+                Cadastre-se
+              </a>
+            </p>
+          </div>
 
           <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
 
